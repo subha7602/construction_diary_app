@@ -6,7 +6,7 @@ import 'package:sjk/Attendence/present_service.dart';
 import 'attendence.dart';
 
 class Present extends StatefulWidget {
-  Present({Key? key}) : super(key: key);
+  const Present({Key? key}) : super(key: key);
 
   @override
   State<Present> createState() => _PresentState();
@@ -26,11 +26,11 @@ class _PresentState extends State<Present> {
   ];
   String? one;
   String? two;
-  TextEditingController date = new TextEditingController();
-  TextEditingController name = new TextEditingController();
-  TextEditingController site = new TextEditingController();
-  TextEditingController type = new TextEditingController();
-  TextEditingController shift = new TextEditingController();
+  TextEditingController date =  TextEditingController();
+  TextEditingController name =  TextEditingController();
+  TextEditingController site =  TextEditingController();
+  TextEditingController type =  TextEditingController();
+  TextEditingController shift = TextEditingController();
   void enterdata() async {
     DocumentReference docRef =
     FirebaseFirestore.instance.collection("attendance").doc();
@@ -51,28 +51,28 @@ class _PresentState extends State<Present> {
         .set(data)
     // .whenComplete(() => toast('Saved Successfully', Colors.blue))
         .whenComplete(() => Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Data4())));
+        context, MaterialPageRoute(builder: (context) => const  Data4())));
   }
 
   @override
   Widget build(BuildContext context) {
-    var inputType;
+    //var inputType;
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-            backgroundColor: Color(0xff01579B),
+            backgroundColor:  const Color(0xff01579B),
             leading: GestureDetector(
               onTap: () {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (_) => Data4()));
+                    context, MaterialPageRoute(builder: (_) => const  Data4()));
               },
-              child: Icon(
+              child: const  Icon(
                 Icons.arrow_back,
                 color: Colors.white,
                 size: 20,
               ),
             ),
-            title: Text(
+            title:  const Text(
               "PRESENT",
               style: TextStyle(
                   fontSize: 20,
@@ -81,16 +81,16 @@ class _PresentState extends State<Present> {
                   fontWeight: FontWeight.bold),
             )),
         body: Container(
-          margin: EdgeInsets.all(20),
+          margin: const  EdgeInsets.all(20),
           height: 400,
           width: 400,
           decoration: BoxDecoration(
-              color: Color(0xffe6f2ff),
+              color: const  Color(0xffe6f2ff),
               border: Border.all(
                 width: 3,
                 color: Colors.black,
               ),
-              borderRadius: BorderRadius.only(
+              borderRadius:  const BorderRadius.only(
                 topLeft: Radius.circular(15),
                 topRight: Radius.circular(15),
                 bottomLeft: Radius.circular(15),
@@ -99,11 +99,11 @@ class _PresentState extends State<Present> {
           child: Column(children: [
             Container(
                 margin:
-                    EdgeInsets.only(top: 20, right: 20, left: 20, bottom: 25),
+                const  EdgeInsets.only(top: 20, right: 20, left: 20, bottom: 25),
                 height: 52,
                 width: 350,
                 decoration: BoxDecoration(
-                  boxShadow: [
+                  boxShadow:  const [
                     BoxShadow(
                       blurRadius: 7,
                     )
@@ -113,7 +113,7 @@ class _PresentState extends State<Present> {
                     width: 1,
                     color: Colors.white,
                   ),
-                  borderRadius: BorderRadius.only(
+                  borderRadius:  const BorderRadius.only(
                     topLeft: Radius.circular(5),
                     topRight: Radius.circular(5),
                     bottomLeft: Radius.circular(5),
@@ -122,9 +122,9 @@ class _PresentState extends State<Present> {
                 ),
                 child: TextFormField(
                   controller: site,
-                  cursorColor: Color(0xff01579B),
-                  keyboardType: inputType,
-                  decoration: new InputDecoration(
+                  cursorColor: const  Color(0xff01579B),
+                  keyboardType: TextInputType.name,
+                  decoration:  const  InputDecoration(
                       border: InputBorder.none,
                       focusedBorder: InputBorder.none,
                       enabledBorder: InputBorder.none,
@@ -137,11 +137,11 @@ class _PresentState extends State<Present> {
             Container(
                 //
                 // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                margin: EdgeInsets.only(right: 20, left: 20),
+                margin:  const EdgeInsets.only(right: 20, left: 20),
                 height: 52,
                 width: 350,
                 decoration: BoxDecoration(
-                  boxShadow: [
+                  boxShadow: const  [
                     BoxShadow(
                       blurRadius: 7,
                     )
@@ -151,7 +151,7 @@ class _PresentState extends State<Present> {
                     width: 1,
                     color: Colors.white,
                   ),
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const  BorderRadius.only(
                     topLeft: Radius.circular(5),
                     topRight: Radius.circular(5),
                     bottomLeft: Radius.circular(5),
@@ -160,9 +160,9 @@ class _PresentState extends State<Present> {
                 ),
                 child: TextFormField(
                   controller: name,
-                  cursorColor: Color(0xff01579B),
-                  keyboardType: inputType,
-                  decoration: new InputDecoration(
+                  cursorColor: const  Color(0xff01579B),
+                  keyboardType: TextInputType.name,
+                  decoration:  const  InputDecoration(
                       border: InputBorder.none,
                       focusedBorder: InputBorder.none,
                       enabledBorder: InputBorder.none,
@@ -173,11 +173,11 @@ class _PresentState extends State<Present> {
                       hintText: "Worker Name*"),
                 )),
             Container(
-                margin: EdgeInsets.only(top: 20, right: 20, left: 20),
+                margin: const  EdgeInsets.only(top: 20, right: 20, left: 20),
                 height: 52,
                 width: 350,
                 decoration: BoxDecoration(
-                  boxShadow: [
+                  boxShadow: const  [
                     BoxShadow(
                       blurRadius: 7,
                     )
@@ -187,7 +187,7 @@ class _PresentState extends State<Present> {
                     width: 1,
                     color: Colors.white,
                   ),
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const  BorderRadius.only(
                     topLeft: Radius.circular(5),
                     topRight: Radius.circular(5),
                     bottomLeft: Radius.circular(5),
@@ -198,11 +198,11 @@ class _PresentState extends State<Present> {
                     value: value,
                     items: items.map((String items) {
                       return DropdownMenuItem(
+                          value: items,
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Text(items),
-                          ),
-                          value: items);
+                          ));
                     }).toList(),
                     onChanged: (String? newValue) {
                       setState(() {
@@ -214,11 +214,11 @@ class _PresentState extends State<Present> {
 
 // Your widget
     Container(
-      margin: EdgeInsets.only(top: 20, right: 20, left: 20),
+      margin:  const EdgeInsets.only(top: 20, right: 20, left: 20),
       height: 52,
       width: 350,
       decoration: BoxDecoration(
-        boxShadow: [
+        boxShadow: const  [
           BoxShadow(
             blurRadius: 7,
           )
@@ -235,12 +235,12 @@ class _PresentState extends State<Present> {
         children: [
           Container(
             padding: EdgeInsets.zero,
-            child: Text(
+            child: const  Text(
               'Shift',
               style: TextStyle(fontSize: 18),
             ),
           ),
-          SizedBox(height: 38, width: 120),
+          const SizedBox(height: 38, width: 120),
           Row(
             children: [
               GestureDetector(
@@ -251,13 +251,11 @@ class _PresentState extends State<Present> {
                   });
                 },
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: Icon(Icons.add_circle_outlined),
+                  padding: const  EdgeInsets.symmetric(horizontal: 10),
+                  child: const  Icon(Icons.add_circle_outlined),
                 ),
               ),
-              Container(
-                child: Text(shift.text), // Use the controller value
-              ),
+              Text(shift.text),
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -266,8 +264,8 @@ class _PresentState extends State<Present> {
                   });
                 },
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: Icon(Icons.remove_circle),
+                  padding: const  EdgeInsets.symmetric(horizontal: 10),
+                  child:  const Icon(Icons.remove_circle),
                 ),
               ),
             ],
@@ -279,11 +277,11 @@ class _PresentState extends State<Present> {
 
 
         Container(
-              margin: EdgeInsets.only(top: 20, right: 20, left: 20),
+              margin: const  EdgeInsets.only(top: 20, right: 20, left: 20),
               height: 52,
               width: 350,
               decoration: BoxDecoration(
-                boxShadow: [
+                boxShadow: const  [
                   BoxShadow(
                     blurRadius: 7,
                   )
@@ -298,13 +296,16 @@ class _PresentState extends State<Present> {
               child: Container(
                 height: 62,
                 width: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                ),
                 child: Center(
                   child: TextField(
                     controller: date,
-                    decoration: InputDecoration(
+                    decoration:  const InputDecoration(
                       hintText: "Date",
                       icon: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding:  EdgeInsets.all(8.0),
                         child: Icon(
                           Icons.calendar_today,
                           color: Colors.black,
@@ -334,9 +335,6 @@ class _PresentState extends State<Present> {
                     },
                   ),
                 ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                ),
               ),
             )
           ]),
@@ -347,32 +345,30 @@ class _PresentState extends State<Present> {
             color: Colors.white30,
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Container(
-                child: Center(
-                    child: GestureDetector(
-                  onTap: () {
-                    enterdata();
-                  },
-                  child: Container(
-                      margin: EdgeInsets.all(20),
-                      height: 50,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          color: Color(0xff01579B),
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(12),
-                            topRight: Radius.circular(12),
-                            bottomLeft: Radius.circular(12),
-                            bottomRight: Radius.circular(12),
-                          )),
-                      alignment: Alignment.center,
-                      child: Text("SAVE",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white))),
-                )),
-              ),
+              Center(
+                  child: GestureDetector(
+                onTap: () {
+                  enterdata();
+                },
+                child: Container(
+                    margin: const  EdgeInsets.all(20),
+                    height: 50,
+                    width: 100,
+                    decoration: const  BoxDecoration(
+                        color: Color(0xff01579B),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(12),
+                          topRight: Radius.circular(12),
+                          bottomLeft: Radius.circular(12),
+                          bottomRight: Radius.circular(12),
+                        )),
+                    alignment: Alignment.center,
+                    child:  const Text("SAVE",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white))),
+              )),
             ])));
   }
 

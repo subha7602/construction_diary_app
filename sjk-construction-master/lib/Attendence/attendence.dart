@@ -4,7 +4,7 @@ import 'package:sjk/Homepage/Homepage.dart';
 import 'Present.dart';
 class Data4 extends StatefulWidget {
 
-  Data4({Key? key, }) : super(key: key);
+  const Data4({Key? key, }) : super(key: key);
 
   @override
   State<Data4> createState() => _Data4State();
@@ -28,25 +28,25 @@ class _Data4State extends State<Data4> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor:  Color(0xff01579B),
+          backgroundColor:  const Color(0xff01579B),
           leading:GestureDetector(
             onTap: () {
               Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (_) => Homepage()));
+                  context, MaterialPageRoute(builder: (_) =>  const  Homepage()));
             },
-            child:Icon(
+            child: const Icon(
               Icons.arrow_back,
               color: Colors.white,
               size: 20,
             ),),
-          title: Text(
+          title:  const Text(
             "ATTENDENCE",
             style: TextStyle(
                 fontSize: 20, fontFamily: 'Inter', color: Colors.white,fontWeight: FontWeight.bold),
           )),
     body: Column(
       children: [
-        Container(
+        SizedBox(
           height: MediaQuery.of(context).size.height*0.7,
           child:
             data.isNotEmpty
@@ -61,23 +61,21 @@ class _Data4State extends State<Data4> {
                 return ListTile(
                   title: Center(child: Text('${attendanceData['Name']}')),
                   subtitle: Center(
-                    child: Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Date: ${attendanceData['Date']}'),
-                          Text('Worker Type: ${attendanceData['Type']}'),
-                          //Text('Shift: ${attendanceData['Shift']}'),
-                          Text('Working Site: ${attendanceData['Site']}'),
-                          // Add more fields as needed
-                        ],
-                      ),
+                    child:  Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Date: ${attendanceData['Date']}'),
+                        Text('Worker Type: ${attendanceData['Type']}'),
+                        //Text('Shift: ${attendanceData['Shift']}'),
+                        Text('Working Site: ${attendanceData['Site']}'),
+                        // Add more fields as needed
+                      ],
                     ),
                   ),
                 );
               },
               separatorBuilder: (BuildContext context, int index) {
-                return Divider(thickness: 3,color: Colors.black,);
+                return const  Divider(thickness: 3,color: Colors.black,);
               },
             )
                 : Center(child: Image.asset('assets/loading.gif'))
@@ -91,12 +89,12 @@ class _Data4State extends State<Data4> {
           onTap: () {
             //_submitform();
             Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => Present()));
+                builder: (context) => const  Present()));
           },        child: Container(
           width: 50,
           height: 50,
-          margin: EdgeInsets.all(30),
-          decoration: BoxDecoration(
+          margin: const  EdgeInsets.all(30),
+          decoration:  const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(5),
               topRight: Radius.circular(5),
@@ -106,7 +104,7 @@ class _Data4State extends State<Data4> {
 
             color: Color(0xff01579B),
           ),
-          child: Center(
+          child:  const Center(
             child: Text(
               'ADD PRESENT+',
               style: TextStyle(

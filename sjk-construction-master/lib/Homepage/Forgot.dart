@@ -22,7 +22,7 @@ class _ForgotState extends State<Forgot> {
     try {
       await FirebaseAuth.instance
           .sendPasswordResetEmail(email: _emailController.text);
-      showDialog(
+       showDialog(
           context: context,
           builder: (context) {
             return AlertDialog(
@@ -45,20 +45,20 @@ class _ForgotState extends State<Forgot> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xff01579B),
+          backgroundColor:const Color(0xff01579B),
           leading: GestureDetector(
             onTap: () {
               Navigator.pushReplacement(
                   context, MaterialPageRoute(builder: (_) => Login()));
             },
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back,
               color: Colors.white,
               size: 20,
             ),
           ),
 
-            title: Text(
+            title:const  Text(
               "Back",
               style: TextStyle(
                   fontSize: 20,
@@ -74,15 +74,15 @@ class _ForgotState extends State<Forgot> {
               Container(
                   height: 40,
                   width: 330,
-                  margin: EdgeInsets.only(top: 80),
-                  child: Text(
+                  margin: const EdgeInsets.only(top: 80),
+                  child:const  Text(
                     'Forgot Password?',
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   )),
-              Container(
+             const  SizedBox(
                   height: 50,
                   width: 330,
-                  child: Text(
+                  child:  Text(
                     'Enter your Email Here.Password reset Link will be sent to your Email',
                     style: TextStyle(
                       fontSize: 16,
@@ -92,15 +92,15 @@ class _ForgotState extends State<Forgot> {
               Container(
                   //
                   // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                  margin: EdgeInsets.only(
+                  margin:const EdgeInsets.only(
                     bottom: 20,
                     top: 20,
                   ),
                   height: 52,
                   width: 330,
                   decoration: BoxDecoration(
-                    border: Border.all(width: 3, color: Color(0xff01579B)),
-                    borderRadius: BorderRadius.only(
+                    border: Border.all(width: 3, color:const  Color(0xff01579B)),
+                    borderRadius:const  BorderRadius.only(
                       topLeft: Radius.circular(5),
                       topRight: Radius.circular(5),
                       bottomLeft: Radius.circular(5),
@@ -108,10 +108,10 @@ class _ForgotState extends State<Forgot> {
                     ),
                   ),
                   child: TextFormField(
-                    cursorColor: Color(0xff01579B),
+                    cursorColor:const Color(0xff01579B),
                     keyboardType: TextInputType.text,
                     controller: _emailController,
-                    decoration: new InputDecoration(
+                    decoration: const InputDecoration(
                         border: InputBorder.none,
                         focusedBorder: InputBorder.none,
                         enabledBorder: InputBorder.none,
@@ -123,11 +123,11 @@ class _ForgotState extends State<Forgot> {
                   )),
               MaterialButton(
                 onPressed: password_reset,
-                child: Text(
+                color: const Color(0xff01579B),
+                child: const Text(
                   'Reset Password',
                   style: TextStyle(color: Colors.white),
                 ),
-                color: Color(0xff01579B),
               )
             ],
           ),

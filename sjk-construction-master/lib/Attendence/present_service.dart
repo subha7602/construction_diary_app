@@ -20,6 +20,7 @@ class _Present_serviceState extends State<Present_service> {
 
     data4=Collection.docs;
   }
+
   bool service4=false;
   @override
   void initState() {
@@ -37,9 +38,8 @@ class _Present_serviceState extends State<Present_service> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: service4 && data4 != null ? Data4( ) : Center(child:Image.asset('assets/loading.gif')),
+      body: service4 && data4 != null ? const  Data4( ) : Center(child:Image.asset('assets/loading.gif')),
     );
   }
-
 }
 

@@ -34,22 +34,22 @@ class _Data5State extends State<Data5> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    var inputType;
+    //var inputType;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff01579B),
+        backgroundColor: const Color(0xff01579B),
         leading: GestureDetector(
           onTap: () {
             Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (_) => Homepage()));
+                context, MaterialPageRoute(builder: (_) => const Homepage()));
           },
-          child: Icon(
+          child:const  Icon(
             Icons.arrow_back,
             color: Colors.white,
             size: 20,
           ),
         ),
-        title: Text(
+        title:const  Text(
           "PAYMENT",
           style: TextStyle(
               fontSize: 20,
@@ -70,11 +70,11 @@ class _Data5State extends State<Data5> with TickerProviderStateMixin {
                   borderRadius: BorderRadius.circular(
                     25.0,
                   ),
-                  color: Color(0xff01579B),
+                  color:const  Color(0xff01579B),
                 ),
                 labelColor: Colors.white,
                   unselectedLabelColor: Colors.black,
-                tabs: [
+                tabs:const  [
 
                   Tab(
                     child: Text('Income'),
@@ -88,7 +88,7 @@ class _Data5State extends State<Data5> with TickerProviderStateMixin {
               ),Expanded(
                 child: TabBarView(
                   controller: _tabController,
-                  children: [
+                  children:const  [
                     // first tab bar view widget
                     Income_service(),
                     Expense_service()

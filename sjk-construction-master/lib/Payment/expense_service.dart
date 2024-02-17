@@ -37,7 +37,7 @@ class _Expense_serviceState extends State<Expense_service> {
   }
   @override
   Widget build(BuildContext context) {
-    return service?Expense(data:data):Center(child:Text('loading....'));
+    return service?Expense(data:data):const Center(child:Text('loading....'));
   }
 }
 

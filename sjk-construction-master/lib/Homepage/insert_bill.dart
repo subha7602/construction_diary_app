@@ -42,10 +42,8 @@ class _ImageLoadState extends State<ImageLoad> {
   Widget build(BuildContext context) {
     return check
         ? Gallery(images: imgs)
-        : Center(
-      child: Container(
-        child: Text("Loading.."),
-      ),
+        : const Center(
+      child: Text("Loading.."),
     );
   }
 }
@@ -111,7 +109,7 @@ class _GalleryState extends State<Gallery> {
           .doc(docref.id)
           .set(data)
           .whenComplete(() => Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => ImageLoad())));
+          context, MaterialPageRoute(builder: (context) => const ImageLoad())));
       return null;
     } on FirebaseAuthException catch (e) {
       return e.message;
@@ -147,7 +145,7 @@ class _GalleryState extends State<Gallery> {
                     : Container(),
               ),
               _imageFile != null
-                  ? SizedBox(
+                  ?const SizedBox(
                 height: 20,
               )
                   : Container(),
@@ -162,15 +160,15 @@ class _GalleryState extends State<Gallery> {
                   color: Colors.blue,
                   child: Text(
                     _imageFile != null ? "Upload Image" : "Select Image",
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 200,
               ),
               Container(
-                padding: EdgeInsets.symmetric(vertical: 16),
+                padding: const EdgeInsets.symmetric(vertical: 16),
                 child: Text(
                   "Images",
                   style: TextStyle(color: Colors.blue.shade800, fontSize: 20),
@@ -179,7 +177,7 @@ class _GalleryState extends State<Gallery> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("Tap to show image"),
+                  const Text("Tap to show image"),
                   GalleryImage(
                     numOfShowImages: widget.images.length,
                     imageUrls: widget.images,

@@ -58,13 +58,13 @@ class _FireBaseInitializationState extends State<FireBaseInitialization> {
 
                       User? _user = streamSnapshot.data as User?;
                       if (_user == null) {
-                        return Signup();
+                        return const Signup();
                       } else {
-                        return Homepage();
+                        return const  Homepage();
                       }
 
                     }
-                    return Scaffold(
+                    return const  Scaffold(
                       resizeToAvoidBottomInset: false,
                       body: Center(
                           child: CircularProgressIndicator()
@@ -73,7 +73,7 @@ class _FireBaseInitializationState extends State<FireBaseInitialization> {
 
 
                      });}
-            return SplashScreen();
+            return const SplashScreen();
           }),
     );
   }
@@ -90,7 +90,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
     );
@@ -109,7 +109,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 5),(){
+    Timer(const Duration(seconds: 5),(){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>FireBaseInitialization()));
     });
   }
@@ -119,9 +119,9 @@ class _SplashScreenState extends State<SplashScreen> {
     return SafeArea(
       child:Scaffold(
 
-          backgroundColor: Color(0xff01579B),
+          backgroundColor:const  Color(0xff01579B),
           body:Center(
-              child:Container(
+              child:SizedBox(
                    height:200,width: 200,
                 child: Image.asset('assets/splash.gif',fit:BoxFit.cover ,),
               )

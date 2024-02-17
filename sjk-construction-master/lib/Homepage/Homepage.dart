@@ -144,7 +144,7 @@ class _HomepageState extends State<Homepage> {
                         ));
                       } else if (index == 3) {
                         Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => Data4(),
+                          builder: (context) => const Data4(),
                         ));
                       } else if (index == 4) {
                         Navigator.of(context).push(MaterialPageRoute(

@@ -24,10 +24,10 @@ class _SignupState extends State<Signup> {
   TextEditingController? confirm_password;
   @override
   void initState() {
-    name = new TextEditingController();
-    email = new TextEditingController();
-    password = new TextEditingController();
-    confirm_password = new TextEditingController();
+    name = TextEditingController();
+    email =  TextEditingController();
+    password =  TextEditingController();
+    confirm_password =  TextEditingController();
   }
 
   Future<void> _alertDialogBox(String error) async {
@@ -39,19 +39,17 @@ class _SignupState extends State<Signup> {
               "Error",
               style: TextStyle(color: Theme.of(context).focusColor),
             ),
-            content: Container(
-              child: Text(
-                error,
-                style: TextStyle(
-                    color: Colors.black, fontSize: SizeConfig.height! * 2),
-              ),
+            content: Text(
+              error,
+              style: TextStyle(
+                  color: Colors.black, fontSize: SizeConfig.height! * 2),
             ),
             actions: [
               ElevatedButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: Text(
+                  child: const Text(
                     "Close Dialog",
                     style: TextStyle(color: Colors.blue),
                   )),
@@ -107,20 +105,19 @@ class _SignupState extends State<Signup> {
           body: Padding(
             padding: const EdgeInsets.only(top: 40, right: 30, left: 30),
             child: Column(children: [
-              Container(
-                  child: Align(
-                      alignment: Alignment.center,
-                      child: Text('Get Started !',
-                          style: TextStyle(
-                              color: Color(0xff1248a3),
-                              fontSize: 28,
-                              fontWeight: FontWeight.w800,
-                              fontFamily: 'Inter')))),
+              const Align(
+                  alignment: Alignment.center,
+                  child: Text('Get Started !',
+                      style: TextStyle(
+                          color: Color(0xff1248a3),
+                          fontSize: 28,
+                          fontWeight: FontWeight.w800,
+                          fontFamily: 'Inter'))),
               Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: Column(
                   children: [
-                    Align(
+                    const Align(
                         alignment: Alignment.topLeft,
                         child: Text(
                           'Full Name',
@@ -129,13 +126,13 @@ class _SignupState extends State<Signup> {
                     Container(
                         //
                         // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                        margin: EdgeInsets.only(
+                        margin:const  EdgeInsets.only(
                           top: 10,
                         ),
                         height: 52,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
-                          boxShadow: [
+                          boxShadow:const  [
                             BoxShadow(
                               blurRadius: 2,
                             )
@@ -145,7 +142,7 @@ class _SignupState extends State<Signup> {
                             width: 1,
                             color: Colors.white,
                           ),
-                          borderRadius: BorderRadius.only(
+                          borderRadius:const  BorderRadius.only(
                             topLeft: Radius.circular(5),
                             topRight: Radius.circular(5),
                             bottomLeft: Radius.circular(5),
@@ -154,7 +151,7 @@ class _SignupState extends State<Signup> {
                         ),
                         child: TextFormField(
                           controller: name,
-                          cursorColor: Color(0xff01579B),
+                          cursorColor:const  Color(0xff01579B),
                           keyboardType: TextInputType.emailAddress,
                           decoration: const InputDecoration(
                               border: InputBorder.none,
@@ -173,7 +170,7 @@ class _SignupState extends State<Signup> {
                 padding: const EdgeInsets.only(top: 20),
                 child: Column(
                   children: [
-                    Align(
+                    const  Align(
                         alignment: Alignment.topLeft,
                         child: Text(
                           'Email',
@@ -182,13 +179,13 @@ class _SignupState extends State<Signup> {
                     Container(
                         //
                         // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                           top: 10,
                         ),
                         height: 52,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
-                          boxShadow: [
+                          boxShadow:const  [
                             BoxShadow(
                               blurRadius: 2,
                             )
@@ -198,7 +195,7 @@ class _SignupState extends State<Signup> {
                             width: 1,
                             color: Colors.white,
                           ),
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(5),
                             topRight: Radius.circular(5),
                             bottomLeft: Radius.circular(5),
@@ -207,7 +204,7 @@ class _SignupState extends State<Signup> {
                         ),
                         child: TextFormField(
                           controller: email,
-                          cursorColor: Color(0xff01579B),
+                          cursorColor: const Color(0xff01579B),
                           keyboardType: TextInputType.emailAddress,
                           decoration: const InputDecoration(
                               border: InputBorder.none,
@@ -226,7 +223,7 @@ class _SignupState extends State<Signup> {
                 padding: const EdgeInsets.only(top: 20),
                 child: Column(
                   children: [
-                    Align(
+                    const Align(
                         alignment: Alignment.topLeft,
                         child: Text(
                           'Password',
@@ -235,13 +232,13 @@ class _SignupState extends State<Signup> {
                     Container(
                         //
                         // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                        margin: EdgeInsets.only(
+                        margin:const  EdgeInsets.only(
                           top: 10,
                         ),
                         height: 52,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
-                          boxShadow: [
+                          boxShadow:const  [
                             BoxShadow(
                               blurRadius: 2,
                             )
@@ -251,7 +248,7 @@ class _SignupState extends State<Signup> {
                             width: 1,
                             color: Colors.white,
                           ),
-                          borderRadius: BorderRadius.only(
+                          borderRadius:const  BorderRadius.only(
                             topLeft: Radius.circular(5),
                             topRight: Radius.circular(5),
                             bottomLeft: Radius.circular(5),
@@ -262,7 +259,7 @@ class _SignupState extends State<Signup> {
                           keyboardType: TextInputType.text,
                           controller: password,
                           obscureText: !_passwordVisible,
-                          cursorColor: Color(0xff01579B),
+                          cursorColor:const  Color(0xff01579B),
                           decoration: InputDecoration(
                               suffixIcon: IconButton(
                                 icon: Icon(
@@ -284,14 +281,14 @@ class _SignupState extends State<Signup> {
                               enabledBorder: InputBorder.none,
                               errorBorder: InputBorder.none,
                               disabledBorder: InputBorder.none,
-                              contentPadding: EdgeInsets.only(
+                              contentPadding:const  EdgeInsets.only(
                                   left: 10, bottom: 10, top: 10, right: 10),
                               hintText: 'Enter Password'),
                         )),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
-                    Align(
+                    const Align(
                         alignment: Alignment.topLeft,
                         child: Text(
                           'Confirm your Password',
@@ -300,13 +297,13 @@ class _SignupState extends State<Signup> {
                     Container(
                         //
                         // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                        margin: EdgeInsets.only(
+                        margin:const  EdgeInsets.only(
                           top: 10,
                         ),
                         height: 52,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
-                          boxShadow: [
+                          boxShadow:const  [
                             BoxShadow(
                               blurRadius: 2,
                             )
@@ -316,7 +313,7 @@ class _SignupState extends State<Signup> {
                             width: 1,
                             color: Colors.white,
                           ),
-                          borderRadius: BorderRadius.only(
+                          borderRadius:const  BorderRadius.only(
                             topLeft: Radius.circular(5),
                             topRight: Radius.circular(5),
                             bottomLeft: Radius.circular(5),
@@ -327,7 +324,7 @@ class _SignupState extends State<Signup> {
                           keyboardType: TextInputType.text,
                           controller: confirm_password,
                           obscureText: !_passwordVisible,
-                          cursorColor: Color(0xff01579B),
+                          cursorColor:const  Color(0xff01579B),
                           decoration: InputDecoration(
                               suffixIcon: IconButton(
                                 icon: Icon(
@@ -349,7 +346,7 @@ class _SignupState extends State<Signup> {
                               enabledBorder: InputBorder.none,
                               errorBorder: InputBorder.none,
                               disabledBorder: InputBorder.none,
-                              contentPadding: EdgeInsets.only(
+                              contentPadding: const EdgeInsets.only(
                                   left: 10, bottom: 10, top: 10, right: 10),
                               hintText: 'Re-enter Password'),
                         )),
@@ -364,11 +361,11 @@ class _SignupState extends State<Signup> {
                   alignment: Alignment.center,
                   child: GestureDetector(
                     onTap: () {
-                      if (name!.text.length == 0) {
+                      if (name!.text.isEmpty) {
                         _alertDialogBox("Name should not be Empty");
-                      } else if (email!.text.length == 0) {
+                      } else if (email!.text.isEmpty) {
                         _alertDialogBox("Email should not be Empty");
-                      } else if (password!.text.length == 0) {
+                      } else if (password!.text.isEmpty) {
                         _alertDialogBox("Password should not be Empty");
                       } else if (password!.text != confirm_password!.text) {
                         _alertDialogBox(
@@ -381,9 +378,9 @@ class _SignupState extends State<Signup> {
                       height: 50,
                       width: 120,
                       decoration: BoxDecoration(
-                          color: Color(0xff1248a3),
+                          color:const  Color(0xff1248a3),
                           borderRadius: BorderRadius.circular(5)),
-                      child: Center(
+                      child:const  Center(
                           child: Text('SIGN-UP',
                               style: TextStyle(
                                   color: Colors.white,
@@ -480,9 +477,9 @@ class _SignupState extends State<Signup> {
               // ),
               Row(
                 children: [
-                  Padding(
+                  const Padding(
                     padding:
-                        const EdgeInsets.only(left: 100, top: 25.0, bottom: 30),
+                         EdgeInsets.only(left: 100, top: 25.0, bottom: 30),
                     child: Align(
                       alignment: Alignment.center,
                       child: Text(
@@ -494,11 +491,11 @@ class _SignupState extends State<Signup> {
                   GestureDetector(
                     onTap: () {
                       Navigator.pushReplacement(
-                          context, MaterialPageRoute(builder: (_) => Login()));
+                          context, MaterialPageRoute(builder: (_) => const Login()));
                     },
-                    child: Padding(
+                    child:const  Padding(
                       padding:
-                          const EdgeInsets.only(top: 25.0, left: 5, bottom: 30),
+                          EdgeInsets.only(top: 25.0, left: 5, bottom: 30),
                       child: Align(
                         alignment: Alignment.center,
                         child: Text(

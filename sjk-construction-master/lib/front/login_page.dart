@@ -47,11 +47,9 @@ class _LoginState extends State<Login> {
               "Error",
               style: TextStyle(color: Theme.of(context).focusColor),
             ),
-            content: Container(
-              child: Text(
-                error,
-                style: TextStyle(color: Colors.black,fontSize: SizeConfig.height!*2.5),
-              ),
+            content: Text(
+              error,
+              style: TextStyle(color: Colors.black,fontSize: SizeConfig.height!*2.5),
             ),
             actions: [
               ElevatedButton(
@@ -78,8 +76,8 @@ class _LoginState extends State<Login> {
   @override
 
   void initState() {
-    email = new TextEditingController();
-    password = new TextEditingController();
+    email =  TextEditingController();
+    password =  TextEditingController();
   }
 
   Widget build(BuildContext context) {
@@ -92,21 +90,21 @@ class _LoginState extends State<Login> {
           padding: const EdgeInsets.only(top:80,right: 30,left: 30),
           child: Column(
             children: [
-              Align(alignment:Alignment.center,child: Text('Login Here !',style:TextStyle(color:Color(0xff1248a3),fontSize: 28,fontWeight: FontWeight.w800,fontFamily: 'Inter'))),
+              const Align(alignment:Alignment.center,child: Text('Login Here !',style:TextStyle(color:Color(0xff1248a3),fontSize: 28,fontWeight: FontWeight.w800,fontFamily: 'Inter'))),
               Padding(
                 padding: const EdgeInsets.only(top:20),
                 child: Column(
                   children: [
-                    Align(
+                    const Align(
                         alignment:Alignment.topLeft,child: Text('Email',style: TextStyle(fontSize: 18,color:Colors.black),)),
                     Container(
                       //
                       // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                        margin: EdgeInsets.only(top:10,),
+                        margin: const  EdgeInsets.only(top:10,),
                         height: 52,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
-                          boxShadow: [
+                          boxShadow: const  [
                             BoxShadow(
                               blurRadius: 2,
                             )
@@ -116,7 +114,7 @@ class _LoginState extends State<Login> {
                             width: 1,
                             color: Colors.white,
                           ),
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const  BorderRadius.only(
                             topLeft: Radius.circular(5),
                             topRight: Radius.circular(5),
                             bottomLeft: Radius.circular(5),
@@ -125,9 +123,9 @@ class _LoginState extends State<Login> {
                         ),
                         child: TextFormField(
                           controller: email,
-                          cursorColor: Color(0xff01579B),
+                          cursorColor: const  Color(0xff01579B),
                           keyboardType:TextInputType.emailAddress ,
-                          decoration: new InputDecoration(
+                          decoration:  const  InputDecoration(
                               border: InputBorder.none,
                               focusedBorder: InputBorder.none,
                               enabledBorder: InputBorder.none,
@@ -145,16 +143,16 @@ class _LoginState extends State<Login> {
                 padding: const EdgeInsets.only(top:20),
                 child: Column(
                   children: [
-                    Align(
+                    const Align(
                         alignment:Alignment.topLeft,child: Text('Password',style: TextStyle(fontSize: 18,color:Colors.black),)),
                     Container(
                       //
                       // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                        margin: EdgeInsets.only(top:10,),
+                        margin: const  EdgeInsets.only(top:10,),
                         height: 52,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
-                          boxShadow: [
+                          boxShadow: const  [
                             BoxShadow(
                               blurRadius: 2,
                             )
@@ -164,7 +162,7 @@ class _LoginState extends State<Login> {
                             width: 1,
                             color: Colors.white,
                           ),
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const  BorderRadius.only(
                             topLeft: Radius.circular(5),
                             topRight: Radius.circular(5),
                             bottomLeft: Radius.circular(5),
@@ -175,7 +173,7 @@ class _LoginState extends State<Login> {
                           keyboardType: TextInputType.text,
                           controller: password,
                           obscureText: !_passwordVisible,
-                          cursorColor: Color(0xff01579B),
+                          cursorColor:  const Color(0xff01579B),
                           decoration: InputDecoration(
                               suffixIcon:  IconButton(
                                 icon: Icon(
@@ -198,7 +196,7 @@ class _LoginState extends State<Login> {
                               enabledBorder: InputBorder.none,
                               errorBorder: InputBorder.none,
                               disabledBorder: InputBorder.none,
-                              contentPadding: EdgeInsets.only(
+                              contentPadding: const  EdgeInsets.only(
                                   left: 10, bottom: 5, top: 10, right: 10),
                               hintText: 'Enter Password'
                           ),
@@ -207,10 +205,10 @@ class _LoginState extends State<Login> {
                     GestureDetector(
                       onTap: (){
                         Navigator.pushReplacement(
-                            context, MaterialPageRoute(builder: (_) => Forgot()));
+                            context, MaterialPageRoute(builder: (_) =>  const Forgot()));
                       },
-                      child: Padding(
-                        padding: const EdgeInsets.only(top:12.0,left: 200),
+                      child:  const Padding(
+                        padding:  EdgeInsets.only(top:12.0,left: 200),
                         child: Align(alignment:Alignment.center ,
                           child: Text('Forgot Password?'
                             ,style: TextStyle(
@@ -228,9 +226,9 @@ class _LoginState extends State<Login> {
                   alignment: Alignment.center,
                   child: GestureDetector(
                     onTap: () {
-                     if (email!.text.length == 0) {
+                     if (email!.text.isEmpty) {
                         _alertDialogBox("Email should not be Empty");
-                      } else if (password!.text.length == 0) {
+                      } else if (password!.text.isEmpty) {
                         _alertDialogBox("Password should not be Empty");
                       }  else {
                         _submitform();
@@ -240,10 +238,10 @@ class _LoginState extends State<Login> {
                       height: 50,width: 100,
                       decoration: BoxDecoration(
 
-                          color:Color(0xff1248a3),
+                          color: const Color(0xff1248a3),
                         borderRadius: BorderRadius.circular(5)
                       ),
-                      child: Center(child: Text('LOG-IN',style:TextStyle(color: Colors.white,fontWeight: FontWeight.w500))),
+                      child:  const Center(child: Text('LOG-IN',style:TextStyle(color: Colors.white,fontWeight: FontWeight.w500))),
                     ),
                   ),
                 ),
@@ -309,8 +307,8 @@ class _LoginState extends State<Login> {
               // ),
               Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left:100,top:25.0,bottom: 150),
+                  const  Padding(
+                    padding:  EdgeInsets.only(left:100,top:25.0,bottom: 150),
                     child: Align(alignment:Alignment.center ,
                       child: Text('New User?'
                         ,style: TextStyle(
@@ -320,10 +318,10 @@ class _LoginState extends State<Login> {
                   GestureDetector(
                     onTap: (){
                       Navigator.pushReplacement(
-                          context, MaterialPageRoute(builder: (_) => Homepage()));
+                          context, MaterialPageRoute(builder: (_) =>  const Homepage()));
                     },
-                    child: Padding(
-                      padding: const EdgeInsets.only(top:25.0,left: 5,bottom: 150),
+                    child:  const Padding(
+                      padding:  EdgeInsets.only(top:25.0,left: 5,bottom: 150),
                       child: Align(alignment:Alignment.center ,
                         child: Text('Sign-Up'
                           ,style: TextStyle(

@@ -18,23 +18,23 @@ class _Data3State extends State<Data3> {
 
   @override
   Widget build(BuildContext context) {
-    var inputType;
+    //var inputType;
     return Scaffold(
 
         appBar: AppBar(
-            backgroundColor: Color(0xff01579B),
+            backgroundColor: const Color(0xff01579B),
             leading: GestureDetector(
               onTap: () {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (_) => Homepage()));
+                    context, MaterialPageRoute(builder: (_) => const Homepage()));
               },
-              child: Icon(
+              child:const  Icon(
                 Icons.arrow_back,
                 color: Colors.white,
                 size: 20,
               ),
             ),
-            title: Text(
+            title:const  Text(
               "MATERIALS",
               style: TextStyle(
                   fontSize: 20,
@@ -46,27 +46,19 @@ class _Data3State extends State<Data3> {
         Column(
           children: [
             Container(
-              height: 50,color:  Color(0xff01579B),
-              child: Expanded(
+              height: 50,color: const  Color(0xff01579B),
+              child:const  Expanded(
                 flex: 9,
-                child: Container(
-                  child: Row(
-                    children: [
-                      Expanded(flex:3,child: Container(
-                        child: Center(child: Text('Material',style: TextStyle(color: Colors.white),)),
-                      )),
-                      Expanded(flex:3,child: Container(
-                        child: Center(child: Text('Amount',style: TextStyle(color: Colors.white),)),
-                      )),
-                      Expanded(flex:3,child: Container(
-                        child: Center(child: Text('Status',style: TextStyle(color: Colors.white),)),
-                      )),
-                    ],
-                  ),
+                child: Row(
+                  children: [
+                    Expanded(flex:3,child: Center(child: Text('Material',style: TextStyle(color: Colors.white),))),
+                    Expanded(flex:3,child: Center(child: Text('Amount',style: TextStyle(color: Colors.white),))),
+                    Expanded(flex:3,child: Center(child: Text('Status',style: TextStyle(color: Colors.white),))),
+                  ],
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               height: 450,
               child:
               ListView.builder(
@@ -76,54 +68,54 @@ class _Data3State extends State<Data3> {
                   return Container(
                     height: 105,
                     width:350,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color.fromRGBO(217, 217, 217, 1),
                     ),
                     child: Expanded(
                       flex:9,
                       child: Row(
                         children: [
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                           Expanded(
                         flex: 3,
                         child: Container(
                           decoration: BoxDecoration(
                             border: Border.all(width: 1, color: Colors.black),
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(12),
                               topRight: Radius.circular(12),
                               bottomLeft: Radius.circular(12),
                               bottomRight: Radius.circular(12),
                             ),
                           ),
-                          padding: EdgeInsets.all(20),
+                          padding:const  EdgeInsets.all(20),
                           child: Text(
                             widget.data[index]["Material"],
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400),
                           ),
                         ),
                       ),
-                            SizedBox(width: 10,),
+                          const  SizedBox(width: 10,),
                             Expanded(
                               flex: 3,
                               child: Container(
 
                                 decoration: BoxDecoration(
                                   border: Border.all(width: 1, color: Colors.black),
-                                  borderRadius: BorderRadius.only(
+                                  borderRadius:const  BorderRadius.only(
                                     topLeft: Radius.circular(12),
                                     topRight: Radius.circular(12),
                                     bottomLeft: Radius.circular(12),
                                     bottomRight: Radius.circular(12),
                                   ),
                                 ),
-                                padding: EdgeInsets.all(20),
+                                padding: const EdgeInsets.all(20),
                                 child: Text(
                                   widget.data[index]["NetAmount"],
-                                  style: TextStyle(
+                                  style:const  TextStyle(
                                       color: Colors.black,
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400),
@@ -131,23 +123,23 @@ class _Data3State extends State<Data3> {
                               ),
                             ),
 
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                         Expanded(
                           flex: 3,
                           child: Container(
                             decoration: BoxDecoration(
                               border: Border.all(width: 1, color: Colors.black),
-                              borderRadius: BorderRadius.only(
+                              borderRadius:const  BorderRadius.only(
                                 topLeft: Radius.circular(12),
                                 topRight: Radius.circular(12),
                                 bottomLeft: Radius.circular(12),
                                 bottomRight: Radius.circular(12),
                               ),
                             ),
-                            padding: EdgeInsets.all(20),
+                            padding:const  EdgeInsets.all(20),
                             child: Text(
                               widget.data[index]["DropdownValue"],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w400),
@@ -155,7 +147,7 @@ class _Data3State extends State<Data3> {
                           ),
                         ),
 
-                          SizedBox(width: 10,),
+                          const  SizedBox(width: 10,),
                            ],
 
                           ),
@@ -182,27 +174,27 @@ bottomNavigationBar: Padding(
 
       Navigator.of(context)
 
-          .push(MaterialPageRoute(builder: (context) => Info(data: [],)));
+          .push(MaterialPageRoute(builder: (context) => const Info(data: [],)));
 
     },
 
     style: ElevatedButton.styleFrom(
 
-      primary: Color(0xff01579B), // background color
+      primary:const  Color(0xff01579B), // background color
 
       onPrimary: Colors.white, // text color
 
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
 
         borderRadius: BorderRadius.all(Radius.circular(5)),
 
       ),
 
-      minimumSize: Size(200, 50),
+      minimumSize:const  Size(200, 50),
 
     ),
 
-    child: Text(
+    child: const Text(
 
       'ADD NEW MATERIAL+',
 

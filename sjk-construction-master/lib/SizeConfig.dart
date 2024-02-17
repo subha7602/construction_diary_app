@@ -8,10 +8,10 @@ class SizeConfig
 
   static void init(BuildContext context)
   {
-    double _height = MediaQuery.of(context).size.height;
-    double _width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
 
-    height = _height / 100;
-    width = _width / 100;
+    height = height / 100;
+    width = width / 100;
   }
 }

@@ -161,7 +161,7 @@ class _Data1State extends State<Data1> {
                                   ),
                                   Row(
                                     children: [
-                                      const  Text('Place:',style: TextStyle(fontSize: 16),),SizedBox(width:5),
+                                      const  Text('Place:',style: TextStyle(fontSize: 16),), const SizedBox(width:5),
                                       Text(
                                         widget.data1[index]["Place"],
                                         style: const TextStyle(

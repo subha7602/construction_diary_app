@@ -15,10 +15,10 @@ class Info extends StatefulWidget {
 }
 
 class _InfoState extends State<Info> {
-  TextEditingController dateInput = new TextEditingController();
-  TextEditingController Material = new TextEditingController();
-  TextEditingController Quantity = new TextEditingController();
-  TextEditingController Rate= new TextEditingController();
+  TextEditingController dateInput =  TextEditingController();
+  TextEditingController Material =  TextEditingController();
+  TextEditingController Quantity =  TextEditingController();
+  TextEditingController Rate=  TextEditingController();
 
   String value = "Type";
   List<String> items = ["Type","Received","Used"];
@@ -44,26 +44,26 @@ class _InfoState extends State<Info> {
         .set(data)
     // .whenComplete(() => toast('Saved Successfully', Colors.blue))
         .whenComplete(() => Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Material_service())));
+        context, MaterialPageRoute(builder: (context) => const Material_service())));
   }
   @override
   Widget build(BuildContext context) {
     var inputType;
     return Scaffold(
         appBar: AppBar(
-            backgroundColor: Color(0xff01579B),
+            backgroundColor: const Color(0xff01579B),
             leading: GestureDetector(
               onTap: () {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (_) => Material_service()));
+                    context, MaterialPageRoute(builder: (_) =>const  Material_service()));
               },
-              child: Icon(
+              child:const  Icon(
                 Icons.arrow_back,
                 color: Colors.white,
                 size: 20,
               ),
             ),
-            title: Text(
+            title:const  Text(
               "MATERIAL-INFO",
               style: TextStyle(
                   fontSize: 20,
@@ -73,16 +73,16 @@ class _InfoState extends State<Info> {
             )),
         body: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.only(top: 80, left: 20, right: 20),
+            margin:const  EdgeInsets.only(top: 80, left: 20, right: 20),
             height: 500,
             width: 400,
             decoration: BoxDecoration(
-                color: Color(0xffe6f2ff),
+                color:const  Color(0xffe6f2ff),
                 border: Border.all(
                   width: 3,
-                  color: Color(0xff01579B),
+                  color: const Color(0xff01579B),
                 ),
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15),
                   topRight: Radius.circular(15),
                   bottomLeft: Radius.circular(15),
@@ -92,11 +92,11 @@ class _InfoState extends State<Info> {
             Column(children: [
               Container(
                   margin:
-                      EdgeInsets.only(top: 30, right: 20, left: 20, bottom: 25),
+                  const  EdgeInsets.only(top: 30, right: 20, left: 20, bottom: 25),
                   height: 52,
                   width: 350,
                   decoration: BoxDecoration(
-                    boxShadow: [
+                    boxShadow:const  [
                       BoxShadow(
                         blurRadius: 7,
                       )
@@ -106,7 +106,7 @@ class _InfoState extends State<Info> {
                       width: 1,
                       color: Colors.white,
                     ),
-                    borderRadius: BorderRadius.only(
+                    borderRadius:const  BorderRadius.only(
                       topLeft: Radius.circular(5),
                       topRight: Radius.circular(5),
                       bottomLeft: Radius.circular(5),
@@ -114,9 +114,9 @@ class _InfoState extends State<Info> {
                     ),
                   ),
                   child: TextFormField(
-                    cursorColor: Color(0xff01579B),
+                    cursorColor:const  Color(0xff01579B),
                     keyboardType: inputType,
-                    decoration: new InputDecoration(
+                    decoration: const  InputDecoration(
                         border: InputBorder.none,
                         focusedBorder: InputBorder.none,
                         enabledBorder: InputBorder.none,
@@ -130,11 +130,11 @@ class _InfoState extends State<Info> {
 
                   //
                   // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                  margin: EdgeInsets.only(right: 20, left: 20),
+                  margin:const  EdgeInsets.only(right: 20, left: 20),
                   height: 52,
                   width: 350,
                   decoration: BoxDecoration(
-                    boxShadow: [
+                    boxShadow:const  [
                       BoxShadow(
                         blurRadius: 7,
                       )
@@ -144,7 +144,7 @@ class _InfoState extends State<Info> {
                       width: 1,
                       color: Colors.white,
                     ),
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(5),
                       topRight: Radius.circular(5),
                       bottomLeft: Radius.circular(5),
@@ -153,9 +153,9 @@ class _InfoState extends State<Info> {
                   ),
                   child: TextFormField(
                     controller: Material,
-                    cursorColor: Color(0xff01579B),
+                    cursorColor:const  Color(0xff01579B),
                     keyboardType: inputType,
-                    decoration: new InputDecoration(
+                    decoration: const  InputDecoration(
                         border: InputBorder.none,
                         focusedBorder: InputBorder.none,
                         enabledBorder: InputBorder.none,
@@ -168,11 +168,11 @@ class _InfoState extends State<Info> {
               Container(
                   //
                   // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                  margin: EdgeInsets.only(top: 25, right: 20, left: 20),
+                  margin:const  EdgeInsets.only(top: 25, right: 20, left: 20),
                   height: 52,
                   width: 350,
                   decoration: BoxDecoration(
-                    boxShadow: [
+                    boxShadow:const  [
                       BoxShadow(
                         blurRadius: 7,
                       )
@@ -182,7 +182,7 @@ class _InfoState extends State<Info> {
                       width: 1,
                       color: Colors.white,
                     ),
-                    borderRadius: BorderRadius.only(
+                    borderRadius:const  BorderRadius.only(
                       topLeft: Radius.circular(5),
                       topRight: Radius.circular(5),
                       bottomLeft: Radius.circular(5),
@@ -192,12 +192,20 @@ class _InfoState extends State<Info> {
                   child: Container(
                       height: 62,
                       width: 150,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          topRight: Radius.circular(15),
+                          bottomLeft: Radius.circular(15),
+                          bottomRight: Radius.circular(15),
+                        ),
+                      ),
                       child: Center(
                           child: TextField(
                         controller: dateInput,
 
                         //editing controller of this TextField
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             icon: Icon(
                               Icons.calendar_today,
                               color: Colors.black,
@@ -233,25 +241,17 @@ class _InfoState extends State<Info> {
                             });
                           }
                         },
-                      )),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          topRight: Radius.circular(15),
-                          bottomLeft: Radius.circular(15),
-                          bottomRight: Radius.circular(15),
-                        ),
-                      ))),
+                      )))),
               Row(
                 children: [
                   Container(
                       //
                       // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                      margin: EdgeInsets.only(top: 25, left: 20, right: 5),
+                      margin: const EdgeInsets.only(top: 25, left: 20, right: 5),
                       height: 52,
                       width: 110,
                       decoration: BoxDecoration(
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 7,
                           )
@@ -261,7 +261,7 @@ class _InfoState extends State<Info> {
                           width: 1,
                           color: Colors.white,
                         ),
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(5),
                           topRight: Radius.circular(5),
                           bottomLeft: Radius.circular(5),
@@ -270,9 +270,9 @@ class _InfoState extends State<Info> {
                       ),
                       child: TextFormField(
                         controller: Quantity,
-                        cursorColor: Color(0xff01579B),
+                        cursorColor: const Color(0xff01579B),
                         keyboardType: inputType,
-                        decoration: new InputDecoration(
+                        decoration: const InputDecoration(
                             border: InputBorder.none,
                             focusedBorder: InputBorder.none,
                             enabledBorder: InputBorder.none,
@@ -284,19 +284,19 @@ class _InfoState extends State<Info> {
                       )),
                   Container(
 
-                      margin: EdgeInsets.only(top: 25, bottom: 2),
+                      margin:const  EdgeInsets.only(top: 25, bottom: 2),
                       alignment: Alignment.center,
                       height: 52,
                       width: 20,
-                      child: Icon(Icons.close)),
+                      child: const Icon(Icons.close)),
                   Container(
                       //
                       // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                      margin: EdgeInsets.only(top: 25,  left: 10),
+                      margin: const EdgeInsets.only(top: 25,  left: 10),
                       height: 52,
                       width: 125,
                       decoration: BoxDecoration(
-                        boxShadow: [
+                        boxShadow:const  [
                           BoxShadow(
                             blurRadius: 7,
                           )
@@ -306,7 +306,7 @@ class _InfoState extends State<Info> {
                           width: 1,
                           color: Colors.white,
                         ),
-                        borderRadius: BorderRadius.only(
+                        borderRadius:const  BorderRadius.only(
                           topLeft: Radius.circular(5),
                           topRight: Radius.circular(5),
                           bottomLeft: Radius.circular(5),
@@ -315,13 +315,13 @@ class _InfoState extends State<Info> {
                       ),
                       child: TextFormField(
                         controller: Rate,
-                        cursorColor: Color(0xff01579B),
+                        cursorColor: const Color(0xff01579B),
                         keyboardType: inputType,
                         onFieldSubmitted: (_) {
                           // Force rebuild to update net amount
                           setState(() {});
                         },
-                        decoration: new InputDecoration(
+                        decoration: const  InputDecoration(
                             border: InputBorder.none,
                             focusedBorder: InputBorder.none,
                             enabledBorder: InputBorder.none,
@@ -336,11 +336,11 @@ class _InfoState extends State<Info> {
               Container(
 
                   // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                  margin: EdgeInsets.only(top: 25, right: 20, left: 20),
+                  margin:const  EdgeInsets.only(top: 25, right: 20, left: 20),
                   height: 52,
                   width: 350,
                   decoration: BoxDecoration(
-                    boxShadow: [
+                    boxShadow:const  [
                       BoxShadow(
                         blurRadius: 7,
                       )
@@ -350,7 +350,7 @@ class _InfoState extends State<Info> {
                       width: 1,
                       color: Colors.white,
                     ),
-                    borderRadius: BorderRadius.only(
+                    borderRadius:const  BorderRadius.only(
                       topLeft: Radius.circular(5),
                       topRight: Radius.circular(5),
                       bottomLeft: Radius.circular(5),
@@ -366,7 +366,7 @@ class _InfoState extends State<Info> {
 
                       return Text(
                         'Net Amount: $netAmount',
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Color(0xff01579B)),
+                        style:const  TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Color(0xff01579B)),
                       );
                     },
                   )
@@ -375,11 +375,11 @@ class _InfoState extends State<Info> {
               Container(
                 //
                 // Figma Flutter Generator Rectangle4Widget - RECTANGLE
-                  margin: EdgeInsets.only(top: 25, right: 20, left: 20),
+                  margin:const  EdgeInsets.only(top: 25, right: 20, left: 20),
                   height: 52,
                   width: 350,
                   decoration: BoxDecoration(
-                    boxShadow: [
+                    boxShadow:const  [
                       BoxShadow(
                         blurRadius: 7,
                       )
@@ -389,7 +389,7 @@ class _InfoState extends State<Info> {
                       width: 1,
                       color: Colors.white,
                     ),
-                    borderRadius: BorderRadius.only(
+                    borderRadius:const  BorderRadius.only(
                       topLeft: Radius.circular(5),
                       topRight: Radius.circular(5),
                       bottomLeft: Radius.circular(5),
@@ -400,7 +400,8 @@ class _InfoState extends State<Info> {
                       value: value,
                       items: items.map((String items) {
                         return DropdownMenuItem(
-                            child: Text(items), value: items);
+                            value: items,
+                            child: Text(items));
                       }).toList(),
                       onChanged: (String? subha) {
                         setState(() {
@@ -419,32 +420,30 @@ class _InfoState extends State<Info> {
             color: Colors.white30,
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Container(
-                child: Center(
-                    child: GestureDetector(
-                  onTap: () {
-                    enterdata();
-                  },
-                  child: Container(
-                      margin: EdgeInsets.all(20),
-                      height: 50,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          color: Color(0xff01579B),
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(12),
-                            topRight: Radius.circular(12),
-                            bottomLeft: Radius.circular(12),
-                            bottomRight: Radius.circular(12),
-                          )),
-                      alignment: Alignment.center,
-                      child: Text("SAVE",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white))),
-                )),
-              ),
+              Center(
+                  child: GestureDetector(
+                onTap: () {
+                  enterdata();
+                },
+                child: Container(
+                    margin: const EdgeInsets.all(20),
+                    height: 50,
+                    width: 100,
+                    decoration:const  BoxDecoration(
+                        color: Color(0xff01579B),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(12),
+                          topRight: Radius.circular(12),
+                          bottomLeft: Radius.circular(12),
+                          bottomRight: Radius.circular(12),
+                        )),
+                    alignment: Alignment.center,
+                    child:const  Text("SAVE",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white))),
+              )),
             ])));
   }
 
